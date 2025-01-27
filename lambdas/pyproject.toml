@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "thoughtful-ai-screen"
+version = "0.1.0"
+description = "Thoughtful AI Technical Screen"
+authors = ["Ben Schwartz"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+black = "^24.10.0"
+pytest-cov = "4.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.coverage.run]
+branch = false
+source = ["src"]
+
+[tool.coverage.paths]
+source = ["src"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
+exclude_lines = [
+    "# pragma: no cover"
+]

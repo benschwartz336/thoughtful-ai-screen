@@ -17,6 +17,7 @@ def lambda_handler(event, context):
       "mass": "5"
     }
     """
+    logger.info(f"event: {event}")
     try:
         width = float(event["width"])
         height = float(event["height"])
@@ -35,5 +36,6 @@ def lambda_handler(event, context):
         return {"statusCode": 400, "body": f"Missing or invalid input: {str(e)}"}
 
     result = sort_package(width, height, length, mass)
+    logger.info(f"result: {result}")
 
     return {"statusCode": 200, "body": result}
